@@ -5,11 +5,11 @@ language: node_js
 env:
   global:
     - GitHub_REF: git@github.com:zouyu01-sz/shopCar.git
-
+    echo "拉取完成"
 # Install dependence
 install:
   - npm install
-  - npm install -g codecov
+  echo "下载依赖完成"
 
 # Cache the node_modules folder and don't need to download and install all npm packages every time.
 cache:
