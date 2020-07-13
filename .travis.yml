@@ -1,11 +1,8 @@
-language: node_js
+stages:
+  - build
 
-install:
-  - npm install
-
-script:
-  - npm run build
-  
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
