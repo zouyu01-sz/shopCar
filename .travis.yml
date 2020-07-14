@@ -14,19 +14,17 @@ script:
   - npm run build
 
 
-#命令里面的变量都是在Travis CI里配置过的。
+#命令里面的变量都是在Travis CI里配置过的。 cd ./shopCar 找到dist移动到 travi
 after_script:
   - git clone https://github.com/zouyu01-sz/travi.git
-  - cd .temp
-  - git checkout gh-pages
-  - cd ../
-  - mv .temp/.git dist
-  - cd dist
+  - cd /shopCar
+  # - git checkout gh-pages
+  - mv /shopCar/dist /travi
   - git config user.name "zouyu01-sz"
   - git config user.email "316675462@qq.com"
   - git add .
   - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
-  - git push --force --quiet "https://debb2f96f135682c1c45fc9c0bca6f57ad629a2f@https://github.com/zouyu01-sz/travi.git"  gh-pages:master
+  - git push --force --quiet "https://debb2f96f135682c1c45fc9c0bca6f57ad629a2f@https://github.com/zouyu01-sz/travi.git"  master:master
 
 
 # 只有指定的分支提交时才会运行脚本
