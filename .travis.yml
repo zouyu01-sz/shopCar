@@ -16,7 +16,7 @@ script:
 
 #命令里面的变量都是在Travis CI里配置过的。
 after_script:
-  - git clone https://github.com/zouyu01-sz/travis_auto.git .temp
+  - git clone https://github.com/zouyu01-sz/travis_auto.git
   - cd .temp
   - git checkout gh-pages
   - cd ../
