@@ -24,7 +24,7 @@ after_script:
   - git config user.email "316675462@qq.com"
   - git add .
   - git commit -m "Update tools"
-  - git push -f git@github.com:https://github.com/zouyu01-sz/travi.git master:gh-pages
+  - git push -f git@github.com:zouyu01-sz/travi.git master:gh-pages
 
 
 # 只有指定的分支提交时才会运行脚本
