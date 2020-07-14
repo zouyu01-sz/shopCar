@@ -1,37 +1,35 @@
+language: node_js #设置语言
 
-language: node_js
+node_js: "10.16.3" #设置语言版本
 
-# Environment variables
-env:
-  global:
-    - GitHub_REF: git@github.com:zouyu01-sz/shopCar.git
-
-# Install dependence
-install:
-  - npm install
-
-# Cache the node_modules folder and don't need to download and install all npm packages every time.
 cache:
   directories:
-    - node_modules
-# Specify the node version.
-node_js:
-  - "11.1.0"
+    - node_modules #缓存依赖
+
+# S: Build Lifecycle
+install:
+  - npm i
+
+script:
+  - npm run build
+
+
+#命令里面的变量都是在Travis CI里配置过的。
+# after_script:
+#   - git clone https://${GH_REF} .temp
+#   - cd .temp
+#   - git checkout gh-pages
+#   - cd ../
+#   - mv .temp/.git dist
+#   - cd dist
+#   - git config user.name "${U_NAME}"
+#   - git config user.email "${U_EMAIL}"
+#   - git add .
+#   - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
+#   - git push --force --quiet "https://${Travis_Token}@${GH_REF}" gh-pages:${D_BRANCH}
+
+
+# 只有指定的分支提交时才会运行脚本
 branches:
   only:
     - master
-# The script to execute.
-script:
-  - npm run docs:build
-  - cd docs
-  - git init
-  - git add -A
-  - git commit -m "docs:update docs"
-  - git push --force --quiet "https://${GitHub_TOKEN}@${GitHub_REF}" master:master
-
-notifications:
-  webhooks:
-    urls:
-      - https://www.travisbuddy.com/
-    on_success: never # Successful build does not send mail.
-    on_failure: always # Build failure always sends a message.
