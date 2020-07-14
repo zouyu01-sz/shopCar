@@ -17,8 +17,8 @@ script:
 #命令里面的变量都是在Travis CI里配置过的。 cd ./shopCar 找到dist移动到 travi
 after_script:
   - git clone https://github.com/zouyu01-sz/travi.git
+  - ls
   - cd /shopCar
-  # - git checkout gh-pages
   - mv /shopCar/dist /travi
   - git config user.name "zouyu01-sz"
   - git config user.email "316675462@qq.com"
