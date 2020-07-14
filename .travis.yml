@@ -18,12 +18,12 @@ script:
 after_script:
   - git clone https://github.com/zouyu01-sz/travi.git
   - ls
-  - cd /shopCar
-  - mv /shopCar/dist /travi
+  - cd ./dist
+  - git init
   - git config user.name "zouyu01-sz"
   - git config user.email "316675462@qq.com"
   - git add .
-  - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
+  - git commit -m "Update tools"
   - git push --force --quiet "https://debb2f96f135682c1c45fc9c0bca6f57ad629a2f@https://github.com/zouyu01-sz/travi.git"  master:master
 
 
