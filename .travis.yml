@@ -25,8 +25,11 @@ after_script:
   - git add .
   - git commit -m "Update tools"
   # - git push -f git@github.com:zouyu01-sz/travi.git master:gh-pages
-  - https://debb2f96f135682c1c45fc9c0bca6f57ad629a2f@github.com:zouyu01-sz/travi.git
 
+deploy:
+- type: git
+  repo: https://debb2f96f135682c1c45fc9c0bca6f57ad629a2f@github.com:zouyu01-sz/travi.git
+  branch: master
 
 # 只有指定的分支提交时才会运行脚本
 branches:
