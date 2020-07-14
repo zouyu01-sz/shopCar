@@ -15,18 +15,18 @@ script:
 
 
 #命令里面的变量都是在Travis CI里配置过的。
-# after_script:
-#   - git clone https://${GH_REF} .temp
-#   - cd .temp
-#   - git checkout gh-pages
-#   - cd ../
-#   - mv .temp/.git dist
-#   - cd dist
-#   - git config user.name "${U_NAME}"
-#   - git config user.email "${U_EMAIL}"
-#   - git add .
-#   - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
-#   - git push --force --quiet "https://${Travis_Token}@${GH_REF}" gh-pages:${D_BRANCH}
+after_script:
+  - git clone https://github.com/zouyu01-sz/travis_auto.git .temp
+  - cd .temp
+  - git checkout gh-pages
+  - cd ../
+  - mv .temp/.git dist
+  - cd dist
+  - git config user.name "zouyu01-sz"
+  - git config user.email "316675462@qq.com"
+  - git add .
+  - git commit -m ":construction_worker:- Build & Deploy by Travis CI"
+  - git push --force --quiet "https://${Travis_Token}@https://github.com/zouyu01-sz/travis_auto.git" gh-pages:${D_BRANCH}
 
 
 # 只有指定的分支提交时才会运行脚本
